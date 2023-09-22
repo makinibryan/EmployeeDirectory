@@ -1,4 +1,5 @@
 ﻿using EmployeeDirectory.Interfaces;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain
 {
@@ -20,7 +21,9 @@ namespace Domain
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime HireDate { get; set; }
-        public decimal Salary { get; }
+
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal Salary { get; set; }
         
 
         public decimal CalculateAnnualSalary( )
